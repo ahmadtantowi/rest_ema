@@ -53,7 +53,7 @@ class Pull extends REST_Controller {
 	}
 
 	public function index_post(){
-		
+
 		$params = json_decode(file_get_contents('php://input'), TRUE);
 		
 		$config['upload_path'] = './gambar/';
@@ -184,8 +184,8 @@ class Pull extends REST_Controller {
 		}
 	}
 
-	public function index_delete(){
-		$id_dkm = $this->delete('id');
+	public function get_delete(){
+		$id_dkm = $this->get('Id_Event');
 		
 		$this->db->where('id_event',$id_dkm);
 		$delete = $this->db->delete('event');
